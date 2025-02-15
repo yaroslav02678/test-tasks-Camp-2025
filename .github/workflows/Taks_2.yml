@@ -29,6 +29,7 @@ jobs:
                 Task_2/build/Debug/GameOfLife.exe
                 Task_2/build/Debug/TestDemoVersion.exe
                 Task_2/build/Debug/Test1.exe
+                Task_2/build/Debug/Test1.txt
 
       - name: Run tests
         run: |
