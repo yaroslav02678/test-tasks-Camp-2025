@@ -25,9 +25,10 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: build-artifacts
-          path: Task_2/build/Debug/GameOfLife.exe
-          path: Task_2/build/Debug/TestDemoVersion.exe
-          path: Task_2/build/Debug/Test1.exe
+          path: |
+                Task_2/build/Debug/GameOfLife.exe
+                Task_2/build/Debug/TestDemoVersion.exe
+                Task_2/build/Debug/Test1.exe
 
       - name: Run tests
         run: |
