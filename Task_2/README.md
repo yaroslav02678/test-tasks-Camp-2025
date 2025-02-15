@@ -61,3 +61,6 @@ cmake .
 cmake --build .
 ```
 
+# Test
+
+<img src='/Task_2/images/image.png'>
