@@ -1,0 +1,35 @@
+name: Build Project
+
+on:
+  push:
+    branches:
+      - 'Task_2'  
+
+jobs:
+  build:
+    runs-on: windows-latest 
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2  
+
+      - name: Build Project
+        run: |
+          cd Task_2
+          mkdir build
+          cd build
+          cmake ..
+          cmake --build .
+          
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-artifacts
+          path: Task_2/build/Debug/GameOfLife.exe
+          path: Task_2/build/Debug/TestDemoVersion.exe
+          path: Task_2/build/Debug/Test1.exe
+
+      - name: Run tests
+        run: |
+          cd Task_2/build/Debug
+          ./Test1.exe
